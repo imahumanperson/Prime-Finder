@@ -1,0 +1,28 @@
+fill(0, 0, 0);
+var primes = [2,3,5,7];
+var repetitions = 3;
+for (var e = 0; e < repetitions; e++){
+var m = primes.length;
+var n = primes[-1];
+var down = 0;
+var right = 0;
+if(down < 0){down=0;}
+if(right < 0){right=0;}
+background(0, 200, 255);
+for (var j = 11; j < primes[m-2]*primes[m-2]; j++){
+    var i = 0;
+    for (var k = 0; k < m; k++){
+        if(j%primes[k] === 0){
+            i = 1;
+        }
+    }
+    if(i === 0){
+            primes.push(j);
+        }
+}
+}
+for (var y = 0; y < 410; y++){
+        for (var x = 0; x < 40; x++){
+            text(primes[x+(y-1)*40],x*37-right*10,(y-down)*10);
+        }
+    }
